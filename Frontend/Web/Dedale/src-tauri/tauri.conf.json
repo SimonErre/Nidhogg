@@ -1,0 +1,49 @@
+{
+  "$schema": "https://schema.tauri.app/config/2",
+  "productName": "dedale",
+  "version": "1.0.0",
+  "identifier": "dedale",
+  "build": {
+    "beforeDevCommand": "npm run dev",
+    "devUrl": "http://localhost:1420",
+    "beforeBuildCommand": "npm run build",
+    "frontendDist": "../dist"
+  },
+  "app": {
+    "windows": [
+      {
+        "title": "Dedale",
+        "width": 1200,
+        "height": 800
+      }
+    ],
+    "security": {
+      "csp": null,
+      "assetProtocol": {
+        "enable": true,
+        "scope": [
+          "**"
+        ]
+      }
+    }
+  },
+  "bundle": {
+    "active": true,
+    "targets": "all",
+    "resources": [
+      "resources/addresses.db",
+      "resources/eurometropole_strasbourg.pmtiles",
+      "fonts/*"
+    ],
+    "icon": [
+      "icons/dedale.ico"
+    ]
+  },
+  "plugins": {
+    "sql": {
+      "allow": [
+        "sqlite:mydatabase.db"
+      ]
+    }
+  }
+}

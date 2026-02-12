@@ -1,0 +1,54 @@
+{
+  "expo": {
+    "name": "Dedale",
+    "slug": "Dedale",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/dedale.png",
+    "userInterfaceStyle": "light",
+    "newArchEnabled": true,
+    "splash": {
+      "image": "./assets/splash-icon.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#ffffff"
+    },
+    "plugins": ["expo-sqlite"],
+    "ios": {
+      "bundleIdentifier": "com.t5crs.dedale",
+      "infoPlist": {
+        "NSLocationWhenInUseUsageDescription": "Nous avons besoin de votre position pour vous localiser sur la carte",
+        "NSLocationAlwaysUsageDescription": "Nous avons besoin de votre position pour vous localiser sur la carte"
+      },
+      "supportsTablet": true
+    },
+    "android": {
+      "usesCleartextTraffic": true,
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/adaptive-icon.png",
+        "backgroundColor": "#ffffff"
+      },
+      "permissions": [
+        "ACCESS_FINE_LOCATION",
+        "ACCESS_COARSE_LOCATION",
+        "android.permission.CAMERA"
+      ],
+      "edgeToEdgeEnabled": true,
+      "predictiveBackGestureEnabled": false,
+      "config": {
+        "googleMaps": {
+          "apiKey": "FAKE_API_KEY_FOR_LOCAL_ONLY"
+        }
+      },
+      "package": "com.t5crs.dedale"
+    },
+    "web": {
+      "favicon": "./assets/favicon.png",
+      "bundler": "metro"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "3e1a8d04-3073-4e55-9721-c6edd46db4e5"
+      }
+    }
+  }
+}

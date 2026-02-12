@@ -1,0 +1,23 @@
+image: alpine:latest
+stages:
+  - info
+  - trigger
+
+trigger_mobile:
+  stage: trigger
+  trigger:
+    include: Frontend/Mobile/.gitlab-ci.yml
+  rules:
+      - changes:
+          - Frontend/Mobile/**/*
+      - when: manual
+
+trigger_web:
+  stage: trigger
+  trigger:
+    include: Frontend/Web/Dedale/.gitlab-ci.yml
+    strategy: depend
+  rules:
+      - changes:
+        - Frontend/Web/**/*
+      - when: manual
